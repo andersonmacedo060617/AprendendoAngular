@@ -19,3 +19,4 @@ class Carro {
 }
 
 let car = new Carro()
+console.log(car)

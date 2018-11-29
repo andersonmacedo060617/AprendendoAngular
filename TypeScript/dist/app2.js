@@ -15,3 +15,4 @@ var Carro = /** @class */ (function () {
     return Carro;
 }());
 var car = new Carro();
+console.log(car);
