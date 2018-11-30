@@ -5,9 +5,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Carro_1 = __importDefault(require("./Carro"));
 var Moto_1 = __importDefault(require("./Moto"));
+var Concecionaria_1 = __importDefault(require("./Concecionaria"));
 var carro = new Carro_1.default('veloster', 3);
 var moto = new Moto_1.default();
 moto.acelerar();
 carro.acelerar();
 console.log(moto);
 console.log(carro);
+var concecionaria = new Concecionaria_1.default('', []);
+console.log(concecionaria.fornecerHorarioDeFuncionamento());
