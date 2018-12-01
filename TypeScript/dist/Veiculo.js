@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Veiculo = /** @class */ (function () {
     function Veiculo() {
+        this.modelo = "";
         this.velocidade = 0;
     }
     Veiculo.prototype.acelerar = function () {

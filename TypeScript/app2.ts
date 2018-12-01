@@ -1,4 +1,4 @@
-import Carro, { qualquer_coisa } from './Carro'
+import Carro from './Carro'
 import Pessoa from './Pessoa'
 import Concessionaria from './Concecionaria'
 

@@ -3,7 +3,7 @@ import Carro from "./Carro";
 export default class Pessoa{
     private nome:string
     private carroPreferido:string
-    private carro:Carro
+    private carro:Carro = new Carro("", 0)
 
     constructor(nome:string, carroPreferido: string){
         this.nome = nome
