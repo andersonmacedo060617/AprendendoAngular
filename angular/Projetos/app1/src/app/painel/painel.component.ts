@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import Frase from '../shared/frase.model'
 import { FRASES } from './frases-mock'
 
@@ -17,9 +17,10 @@ export class PainelComponent implements OnInit {
   public rodadaFrase: Frase
   public progresso : number = 0
 
+  public tentativas : number = 3
+
   constructor() {
     this.atualizaRodada()
-    console.log(this.rodadaFrase)
    }
 
   ngOnInit() {
@@ -31,11 +32,9 @@ export class PainelComponent implements OnInit {
   }
 
   public verificarResposta():void{
-
+    
     if(this.rodadaFrase.frasePtBr.toUpperCase() == this.resposta.toUpperCase()){
-      alert("A tradução está correta")
-
-
+  
       this.resposta = ""
 
       //trocar pergunta da rodada
@@ -45,7 +44,11 @@ export class PainelComponent implements OnInit {
 
       this.atualizaRodada()
     }else{
-      alert("A tradução está errada")
+      this.tentativas--
+      if(this.tentativas === -1){
+        alert("Game Over")
+  
+      }
     }
   }
 
