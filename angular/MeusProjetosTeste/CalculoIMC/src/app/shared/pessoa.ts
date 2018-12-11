@@ -5,14 +5,22 @@ export class  Pessoa {
     public altura : number
     public sexoPessoa: ESexo
 
+    constructor(nome:string = ""){
+        this.nome = nome
+    }
     
     valorImc() : number {
-        return this.peso / (this.altura * this.altura)
+        let vlr = this.peso / (this.altura * this.altura)
+        if(isNaN(vlr)){
+            return null
+        }else{
+            return Number(vlr.toFixed(2))
+        }
     }
 
     public analiseImc():string{
         let vlrImc : number = this.valorImc()
-        if(vlrImc < 17){
+        if(vlrImc < 17 && vlrImc != null){
             return 'Muito abaixo do peso'
         }else if(vlrImc >=17 && vlrImc <18.5){
             return 'Abaixo do peso'   
@@ -26,8 +34,11 @@ export class  Pessoa {
             return 'Obesidade Grau II'   
         }else if(vlrImc > 40){
             return 'Obesidade Grau III'   
+        }else{
+            return ""
         }
     }
+
 }
 
 enum ESexo{
