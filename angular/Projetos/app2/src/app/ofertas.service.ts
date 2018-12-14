@@ -1,4 +1,5 @@
 import { Oferta } from './shared/oferta.model';
+import { Action } from 'rxjs/internal/scheduler/Action';
 
 export class OfertaService{
 
@@ -55,5 +56,29 @@ export class OfertaService{
 
     public getOfertas():Array<Oferta>{
         return this.ofertas
+    }
+
+    public getOfertas2():Promise<Array<Oferta>>{
+        return new Promise((resolve, reject)=>{
+            let deu_certo = true
+            if(deu_certo){
+                setTimeout(()=>resolve(this.ofertas), 3000)
+            }else{
+                reject({
+                    codigo_erro: 404, 
+                    message_erro: 'Servidor não encontado' 
+                })
+            }
+            
+            
+        })
+        .then((ofertas: Oferta[])=>{
+            console.log('primeiro then')
+            return ofertas
+        })
+        .then((ofertas : Oferta[])=>{
+            console.log('Segundo Then')
+            return ofertas
+        })
     }
 }
