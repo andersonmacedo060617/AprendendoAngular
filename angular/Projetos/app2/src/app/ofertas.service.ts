@@ -11,9 +11,9 @@ export class OfertaService{
     public ofertas : Array<Oferta>
 
     public getOfertas():Promise<Oferta[]>{
-        return this.http.get<Oferta[]>('http://localhost:3000/ofertas')
+        return this.http.get<Oferta[]>('http://localhost:3000/ofertas?destaque=true')
             .toPromise()
-            .then((resposta)=>resposta)
+            .then((resposta:any)=>resposta)
     }
 
     // public getOfertas2():Promise<Array<Oferta>>{
