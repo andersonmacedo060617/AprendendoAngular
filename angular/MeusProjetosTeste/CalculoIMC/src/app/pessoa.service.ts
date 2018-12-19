@@ -12,6 +12,18 @@ export class PessoaService{
     public findAllPessoas():Promise<Pessoa[]>{
         return this.http.get<Pessoa[]>("http://localhost:3000/contatos")
         .toPromise()
-        .then((resposta:any)=>resposta)
+        .then((resposta:any)=>{
+            let listaPessoas : Pessoa[] = new Array()
+            resposta.forEach(element => {
+                let pes : Pessoa = new Pessoa()
+                pes.nome = element.nome
+                pes.idade = element.idade
+                pes.altura = element.altura
+                pes.peso = element.peso
+                pes.sexoPessoa = element.sexoPessoa
+                listaPessoas.push(pes)
+            });
+            return listaPessoas
+        })
     }
 }
