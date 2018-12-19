@@ -1,0 +1,40 @@
+{
+	"contatos" : [
+	{
+		"nome": "João",
+		"idade": 18,
+		"sexoPessoa": 0,
+		"peso": 75,
+		"altura": 1.75
+	},
+	{
+		"nome": "Maria",
+		"idade": 23,
+		"sexoPessoa": 1,
+		"peso": 70,
+		"altura": 1.65
+	},
+	{
+		"nome": "Juca",
+		"idade": 28,
+		"sexoPessoa": 0,
+		"peso": 90,
+		"altura": 1.80
+	},
+	{
+		"nome": "Carlos",
+		"idade": 24,
+		"sexoPessoa": 0,
+		"peso": 80,
+		"altura": 1.77
+	},
+	{
+		"nome": "Alice",
+		"idade": 30,
+		"sexoPessoa": 1,
+		"peso": 60,
+		"altura": 1.60
+	}
+	
+	]
+}

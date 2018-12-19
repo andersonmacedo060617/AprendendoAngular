@@ -6,6 +6,7 @@ import { TopoComponent } from './topo/topo.component';
 import { PainelComponent } from './painel/painel.component';
 import { FormCalculoComponent } from './form-calculo/form-calculo.component';
 import { TableCalculoComponent } from './table-calculo/table-calculo.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TableCalculoComponent } from './table-calculo/table-calculo.component';
     TableCalculoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
