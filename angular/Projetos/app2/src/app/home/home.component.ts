@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
       .then(
         (ofertas: Array<Oferta>) => {
           this.ofertas = ofertas
-          console.log("A funçao resolve() foi resolvida depois de 3 segundos")
+          //console.log("A funçao resolve() foi resolvida depois de 3 segundos")
         }
         
       )
