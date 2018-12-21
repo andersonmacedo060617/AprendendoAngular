@@ -7,6 +7,8 @@ import { PainelComponent } from './painel/painel.component';
 import { FormCalculoComponent } from './form-calculo/form-calculo.component';
 import { TableCalculoComponent } from './table-calculo/table-calculo.component';
 import { HttpClientModule } from '@angular/common/http'
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http'
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

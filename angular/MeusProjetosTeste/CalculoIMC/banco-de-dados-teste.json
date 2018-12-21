@@ -1,6 +1,7 @@
 {
 	"contatos" : [
 	{
+		"id": 1,
 		"nome": "João",
 		"idade": 18,
 		"sexoPessoa": 0,
@@ -8,6 +9,7 @@
 		"altura": 1.75
 	},
 	{
+		"id": 2,
 		"nome": "Maria",
 		"idade": 23,
 		"sexoPessoa": 1,
@@ -15,6 +17,7 @@
 		"altura": 1.65
 	},
 	{
+		"id": 3,
 		"nome": "Juca",
 		"idade": 28,
 		"sexoPessoa": 0,
@@ -22,6 +25,7 @@
 		"altura": 1.80
 	},
 	{
+		"id": 4,
 		"nome": "Carlos",
 		"idade": 24,
 		"sexoPessoa": 0,
@@ -29,6 +33,7 @@
 		"altura": 1.77
 	},
 	{
+		"id": 5,
 		"nome": "Alice",
 		"idade": 30,
 		"sexoPessoa": 1,

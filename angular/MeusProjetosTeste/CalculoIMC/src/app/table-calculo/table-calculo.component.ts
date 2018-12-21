@@ -19,7 +19,7 @@ export class TableCalculoComponent implements OnInit {
     this.pessoaService.findAllPessoas()
       .then((pessoas: Pessoa[])=>{
         this.pessoas = pessoas
-        console.log(pessoas)
+        //console.log(pessoas)
       })
   }
 

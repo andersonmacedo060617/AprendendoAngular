@@ -8,5 +8,4 @@ import { Pessoa } from './shared/pessoa';
 })
 export class AppComponent {
   title = 'CalculoIMC';
-  
 }

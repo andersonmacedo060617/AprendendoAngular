@@ -16,6 +16,7 @@ export class PessoaService{
             let listaPessoas : Pessoa[] = new Array()
             resposta.forEach(element => {
                 let pes : Pessoa = new Pessoa()
+                pes.id = element.id
                 pes.nome = element.nome
                 pes.idade = element.idade
                 pes.altura = element.altura
