@@ -27,8 +27,11 @@
           <input type="number" id="Idade" class="form-control" placeholder="Idade" [value]="pessoa.idade" (input) = "setIdade($event)"/>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-2">
         <button class="btn btn-primary" (click)="calculaImc()">Calcular</button>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-danger" (click)="removerPessoa()">Remover</button>
       </div>
     </div>
 </div>
