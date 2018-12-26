@@ -35,8 +35,10 @@ export class FormCalculoComponent implements OnInit {
   }
 
   public calculaImc():void{
-    console.log(this.pessoa.valorImc())
-    console.log(this.pessoa.analiseImc())
+    // console.log(this.pessoa.valorImc())
+    // console.log(this.pessoa.analiseImc())
     this.dadosPessoa.emit(this.pessoa)
   }
+
+  
 }

@@ -3,6 +3,9 @@ import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
 
 
+
+
+
 @Injectable()
 export class OfertaService{
 
@@ -22,6 +25,17 @@ export class OfertaService{
             .then((resposta:any)=>resposta)
     }
 
+    /**
+     * getOfertaPorId
+     */
+    public getOfertaPorId(id: number):Promise<Oferta> {
+        return this.http.get(`http://localhost:3000/ofertas?id=${id}`)
+            .toPromise()
+            .then((resposta: any)=>{
+                // console.log(resposta.shift())
+                return resposta[0]
+        })
+    }
     // public getOfertas2():Promise<Array<Oferta>>{
     //     return new Promise((resolve, reject)=>{
     //         let deu_certo = true

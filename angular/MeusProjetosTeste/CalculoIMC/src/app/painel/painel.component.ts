@@ -17,7 +17,6 @@ export class PainelComponent implements OnInit {
 
   public dadosPessoa(pessoa: Pessoa):void{
     this.pessoa = pessoa    
-    console.log("Pessoa chegou aqui =>" + this.pessoa.nome)
   }
 
 }
