@@ -11,21 +11,15 @@ import { PessoaService } from '../pessoa.service';
 export class TableCalculoComponent implements OnInit {
 
   @Input() public pessoa : Pessoa = new Pessoa()
-  @Input() public ltpessoas1 : Pessoa[]
+  @Input() public ltpessoas : Pessoa[]
 
   public pessoas : Pessoa[]
   constructor(private pessoaService : PessoaService) { }
 
   ngOnInit() {
-    this.pessoaService.findAllPessoas()
-      .then((pessoas: Pessoa[])=>{
-        this.pessoas = pessoas
-      })
+    
   }
 
-  public lstPessoas(ltpessoas : Pessoa[]):void{
-    this.ltpessoas1 = ltpessoas
-    console.log(this.ltpessoas1)
-  }
+
 
 }

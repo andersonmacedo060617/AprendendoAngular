@@ -11,21 +11,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let pes of pessoas">
+      <tr *ngFor="let pes of ltpessoas">
         <td>{{pes.nome}}</td>
         <td>{{pes.idade}}</td>
         <td>{{pes.peso}}</td>
         <td>{{pes.altura}}</td>
         <td>{{pes.valorImc()}}</td>
         <td>{{pes.analiseImc()}}</td>
-      </tr>
-      <tr>
-        <td>{{pessoa.nome}}</td>
-        <td>{{pessoa.idade}}</td>
-        <td>{{pessoa.peso}}</td>
-        <td>{{pessoa.altura}}</td>
-        <td>{{pessoa.valorImc()}}</td>
-        <td>{{pessoa.analiseImc()}}</td>
       </tr>
     </tbody>
   </table>
