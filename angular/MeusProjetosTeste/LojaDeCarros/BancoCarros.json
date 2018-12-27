@@ -1,0 +1,40 @@
+{
+	"Carros" : [
+		{
+			"id": 1,
+			"marca": "Ford",
+			"modelo": "Fiesta",
+			"ano": 2011,
+			"valor": 21232.00,
+			"caracteristicaItem": ["Gasolina", "Direção Hidraulica", "Vidro Eletrico"],
+			"urlFotos": [
+				
+			],
+			"exibeGaleria": true
+		},
+		{
+			"id": 2,
+			"marca": "Fiat",
+			"modelo": "Argo",
+			"ano": 2018,
+			"valor": 39627,
+			"caracteristicaItem": ["Flex", "Direção Hidraulica", "Vidro Eletrico", "Trava"],
+			"urlFotos": [
+				
+			],
+			"exibeGaleria": true
+		},
+		{
+			"id": 3,
+			"marca": "Fiat",
+			"modelo": "Palio Week",
+			"ano": 2013,
+			"valor": 30068,
+			"caracteristicaItem": ["Direção Hidraulica", "Vidro Eletrico", "Trava"],
+			"urlFotos": [
+				
+			],
+			"exibeGaleria":true
+		}
+	]
+}

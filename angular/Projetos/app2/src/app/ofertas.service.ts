@@ -3,14 +3,8 @@ import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
 import { URL_API } from './app.api';
 
-
-
-
-
 @Injectable()
 export class OfertaService{
-
-    
 
     constructor(private http: HttpClient){}
 

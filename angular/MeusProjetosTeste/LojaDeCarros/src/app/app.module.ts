@@ -2,13 +2,30 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { MenuTopoComponent } from './menu-topo/menu-topo.component';
+import { RodapeComponent } from './rodape/rodape.component';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from 'src/app.routes';
+import { ItemVendaComponent } from './item-venda/item-venda.component';
+import { MenuCategoriaComponent } from './menu-categoria/menu-categoria.component';
+import { PainelOfertaComponent } from './painel-oferta/painel-oferta.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    MenuTopoComponent,
+    RodapeComponent,
+    ItemVendaComponent,
+    MenuCategoriaComponent,
+    PainelOfertaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]
