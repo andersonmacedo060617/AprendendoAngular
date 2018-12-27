@@ -1,6 +1,7 @@
 import { Oferta } from './shared/oferta.model';
 import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
+import { URL_API } from './app.api';
 
 
 
@@ -9,18 +10,20 @@ import {HttpClient} from '@angular/common/http'
 @Injectable()
 export class OfertaService{
 
+    
+
     constructor(private http: HttpClient){}
 
     public ofertas : Array<Oferta>
 
     public getOfertas():Promise<Oferta[]>{
-        return this.http.get<Oferta[]>('http://localhost:3000/ofertas?destaque=true')
+        return this.http.get<Oferta[]>(`${URL_API}?destaque=true`)
             .toPromise()
             .then((resposta:any)=>resposta)
     }
 
     public getOfertasPorCategoria(categoria:string):Promise<Oferta[]>{
-        return this.http.get<Oferta[]>(`http://localhost:3000/ofertas?categoria=${categoria}`)
+        return this.http.get<Oferta[]>(`${URL_API}?categoria=${categoria}`)
             .toPromise()
             .then((resposta:any)=>resposta)
     }
@@ -29,7 +32,7 @@ export class OfertaService{
      * getOfertaPorId
      */
     public getOfertaPorId(id: number):Promise<Oferta> {
-        return this.http.get(`http://localhost:3000/ofertas?id=${id}`)
+        return this.http.get(`${URL_API}?id=${id}`)
             .toPromise()
             .then((resposta: any)=>{
                 // console.log(resposta.shift())
