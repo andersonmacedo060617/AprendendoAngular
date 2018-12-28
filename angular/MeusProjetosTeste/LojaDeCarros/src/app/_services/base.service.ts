@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHandler} from '@angular/common/http'
 
 @Injectable()
 export class BaseService<T>{
     protected baseUrl: string
-    protected http : HttpClient
-    constructor(baseUrl:string){
-        this.baseUrl = baseUrl
-    }
+
+    constructor(protected http : HttpClient){
+    } 
+
+
 
     public getAll():Promise<T[]>{
         console.log(this.baseUrl)
@@ -19,7 +20,10 @@ export class BaseService<T>{
     public getById(id:number):Promise<T>{
         return this.http.get(`${this.baseUrl}/${id}`)
             .toPromise()
-            .then((resposta:any)=>resposta.shift())
+            .then((resposta:any)=>{
+                //console.log(resposta)
+                return resposta
+            })
     }
 
     public getByField(field:string, value:string):Promise<T[]>{
