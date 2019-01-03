@@ -25,7 +25,7 @@ export class TopoComponent implements OnInit {
       .pipe(debounceTime(1000))
       .pipe(distinctUntilChanged())
       .pipe(switchMap((termo:string)=>{
-        console.log('requisição http para api')
+        
         if(termo.trim() === ""){
           return of<Oferta[]>()
         }
