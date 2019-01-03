@@ -24,7 +24,7 @@ export class ConsultaEnderecoComponent implements OnInit {
   }
 
   public consultaCep():void{
-    console.log(isNumber(this.endereco.cep.replace(".", "").replace("-", "")))
+    //console.log(isNumber(this.endereco.cep.replace(".", "").replace("-", "")))
     if(this.endereco.cep.replace(".", "").replace("-", "").length === 8){
       this.enderecoService.getByCep(this.endereco.cep)
       .then((resposta : any)=>{
