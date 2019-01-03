@@ -33,5 +33,9 @@ export class ConsultaEnderecoComponent implements OnInit {
     }
   }
 
+  public salvaEndereco(){
+    console.log(this.endereco)
+  }
+
 
 }

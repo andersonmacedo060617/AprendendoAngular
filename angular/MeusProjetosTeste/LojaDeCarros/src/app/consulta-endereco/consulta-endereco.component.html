@@ -2,21 +2,21 @@
     <div class="form-row">
       <div class="form-group col-md-10">
         <label>Logradouro</label>
-        <input type="text" class="form-control" placeholder="Rua..." [value]="endereco.logradouro">
+        <input type="text" class="form-control" placeholder="Rua..." [value]="endereco.logradouro" (input)="endereco.logradouro=$event.target.value">
       </div>
       <div class="form-group col-md-2">
         <label>Número</label>
-        <input type="text" class="form-control" placeholder="Numero" [value]="endereco.numero">
+        <input type="text" class="form-control" placeholder="Numero" [value]="endereco.numero" (input)="endereco.numero=$event.target.value">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-5">
         <label>Complemento</label>
-        <input type="text" class="form-control" [value]="endereco.complemento">
+        <input type="text" class="form-control" [value]="endereco.complemento" (input)="endereco.complemento=$event.target.value">
       </div>
       <div class="form-group col-md-4">
         <label>Bairro</label>
-        <input type="text" class="form-control" [value]="endereco.bairro">
+        <input type="text" class="form-control" [value]="endereco.bairro" (input)="endereco.bairro=$event.target.value">
       </div>
       <div class="form-group col-md-3">
         <label>CEP</label>
@@ -26,7 +26,7 @@
                 <i class="fa fa-search"></i>
               </div>
             </div>
-            <input type="text" class="form-control" placeholder="99999-999" [value]="endereco.cep" (input)="setCEP($event)">
+            <input type="text" class="form-control" placeholder="99999-999" [value]="endereco.cep" (input)="endereco.cep=$event.target.value">
           </div>
       </div>
 
@@ -39,8 +39,8 @@
       </div>
       <div class="form-group col-md-2">
         <label>UF</label>
-        <input type="text" class="form-control" [value]="endereco.uf">
+        <input type="text" class="form-control" [value]="endereco.uf" >
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Entrar</button>
+    <button type="button" class="btn btn-primary" (click)="salvaEndereco()">Entrar</button>
   </form>
