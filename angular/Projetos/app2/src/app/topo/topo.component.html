@@ -1,7 +1,7 @@
 <div>
   <nav class="navbar navbar-light bg-faded">
     <div class="container">
-      <div class="row">
+      <div class="row fixed">
         <div class="col-md-4"></div>
         <div class="col-md-6">
           <input type="text" class="form-control" 
@@ -9,6 +9,10 @@
           #termoDaPesquisa
           (keyup)="pesquisa(termoDaPesquisa.value)">
         </div>
+        <ul class="list-group"  style="position: absolut;">
+          <li class="list-group-item" *ngFor="let oferta of ofertas2" >{{oferta.titulo}}</li>
+        </ul>
+
         <div class="col-md-2"></div>
       </div>
       <a routerLink="" class="navbar-brand">

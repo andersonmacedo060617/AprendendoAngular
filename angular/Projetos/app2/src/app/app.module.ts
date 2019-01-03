@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { OfertaComponent } from './oferta/oferta.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    CommonModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],
