@@ -13,8 +13,11 @@
           placeholder="Pesquise por ofertas..." 
           #termoDaPesquisa
           (keyup)="pesquisa(termoDaPesquisa.value)">
-          <ul class="list-group"  style="position: absolut;">
-            <li class="list-group-item" *ngFor="let oferta of ofertas2" >{{oferta.titulo | uppercase}}</li>
+          <ul class="list-group"  style="position: absolut; z-index: 999;">
+            <li class="list-group-item" *ngFor="let oferta of ofertas | async" >
+              <a [routerLink]="['/oferta', oferta.id]" (click)="limpaPesquisa()">
+                {{oferta.titulo | descricaoReduzida : 15}}</a>
+            </li>
           </ul>
         </div>
         

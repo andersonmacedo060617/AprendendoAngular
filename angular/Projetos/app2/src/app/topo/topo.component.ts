@@ -14,8 +14,8 @@ import {switchMap, debounceTime, distinctUntilChanged, catchError} from 'rxjs/op
 })
 export class TopoComponent implements OnInit {
 
-  public ofertas2 : Oferta[]
   public ofertas : Observable<Oferta[]>
+
   private subjectPesquisa: Subject<string> = new Subject<string>()
 
   constructor(private ofertasService: OfertaService) { }
@@ -27,24 +27,23 @@ export class TopoComponent implements OnInit {
       .pipe(switchMap((termo:string)=>{
         
         if(termo.trim() === ""){
-          return of<Oferta[]>()
+          return of<Oferta[]>([])
         }
         return this.ofertasService.pesquisaOfertas(termo)
       }))
       .pipe(catchError((err: any)=>{
-        console.log(err)
         return of<Oferta[]>([])
       }))
 
-      this.ofertas.subscribe((ofertas: Oferta[])=>{
-        this.ofertas2 = ofertas
-      })
   }
 
-  public pesquisa(termoDaBusca:string): void{
-    console.log('keyup caracter:', termoDaBusca)
+  public pesquisa(termoDaBusca:string): void{  
     this.subjectPesquisa.next(termoDaBusca)
 
+  }
+
+  public limpaPesquisa():void{
+    this.subjectPesquisa.next('')
   }
 
 }
