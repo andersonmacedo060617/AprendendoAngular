@@ -12,6 +12,13 @@ export class OrdemCompraComponent implements OnInit {
   public complemento:string = ""
   public formaPagamento:string = ""
 
+  //controles de validação dos campos
+  public enderecoValido: boolean
+  public numveroValido: boolean
+  public complementoValido: boolean
+  public formaPagamentoValido: boolean
+
+
   constructor() { }
 
   ngOnInit() {
@@ -19,6 +26,12 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaEndereco(endereco:string):void{
     this.endereco = endereco
+
+    if(this.endereco.length > 3){
+      this.enderecoValido = true
+    }else{
+      this.enderecoValido = false
+    }
   }
 
   public atualizaNumero(numero:string):void{
