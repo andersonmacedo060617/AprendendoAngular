@@ -14,7 +14,7 @@ export class OrdemCompraComponent implements OnInit {
 
   //controles de validação dos campos
   public enderecoValido: boolean
-  public numveroValido: boolean
+  public numeroValido: boolean
   public complementoValido: boolean
   public formaPagamentoValido: boolean
 
@@ -36,13 +36,28 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaNumero(numero:string):void{
     this.numero = numero
+    if(this.numero.length > 0){
+      this.numeroValido = true
+    }else{
+      this.numeroValido = false
+    }
   }
 
   public atualizaComplemento(complemento:string):void{
     this.complemento = complemento
+    if(this.complemento.length > 0){
+      this.complementoValido = true
+    }else{
+      this.complementoValido = false
+    }
   }
 
   public atualizaFormaPagamento(formaPagamento:string):void{
     this.formaPagamento = formaPagamento
+    if(this.formaPagamento === 'debito' || this.formaPagamento === 'dinheiro'){
+      this.formaPagamentoValido = true
+    }else{
+      this.formaPagamentoValido = false
+    }
   }
 }
