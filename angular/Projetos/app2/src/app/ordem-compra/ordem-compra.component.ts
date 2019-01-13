@@ -1,63 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { OrdemCompraService } from '../orde-compra.service'
+import { Pedido } from '../shared/pedido.model'
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-ordem-compra',
   templateUrl: './ordem-compra.component.html',
-  styleUrls: ['./ordem-compra.component.css']
+  styleUrls: ['./ordem-compra.component.css'],
+  providers: [ OrdemCompraService ]
 })
 export class OrdemCompraComponent implements OnInit {
 
-  public endereco:string = ""
-  public numero:string  = ""
-  public complemento:string = ""
-  public formaPagamento:string = ""
+  
+  @ViewChild("formulario") public formulario: NgForm
 
-  //controles de validação dos campos
-  public enderecoValido: boolean
-  public numeroValido: boolean
-  public complementoValido: boolean
-  public formaPagamentoValido: boolean
-
-
-  constructor() { }
+  constructor(private ordemCompraService: OrdemCompraService) { }
 
   ngOnInit() {
   }
 
-  public atualizaEndereco(endereco:string):void{
-    this.endereco = endereco
-
-    if(this.endereco.length > 3){
-      this.enderecoValido = true
-    }else{
-      this.enderecoValido = false
-    }
+  
+  
+  public confirmarCompra():void{
+    console.log(this.formulario)
   }
 
-  public atualizaNumero(numero:string):void{
-    this.numero = numero
-    if(this.numero.length > 0){
-      this.numeroValido = true
-    }else{
-      this.numeroValido = false
-    }
-  }
-
-  public atualizaComplemento(complemento:string):void{
-    this.complemento = complemento
-    if(this.complemento.length > 0){
-      this.complementoValido = true
-    }else{
-      this.complementoValido = false
-    }
-  }
-
-  public atualizaFormaPagamento(formaPagamento:string):void{
-    this.formaPagamento = formaPagamento
-    if(this.formaPagamento === 'debito' || this.formaPagamento === 'dinheiro'){
-      this.formaPagamentoValido = true
-    }else{
-      this.formaPagamentoValido = false
-    }
-  }
 }
