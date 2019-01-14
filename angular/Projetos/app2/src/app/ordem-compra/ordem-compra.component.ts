@@ -12,7 +12,7 @@ import { NgForm } from '@angular/forms';
 export class OrdemCompraComponent implements OnInit {
 
   
-  @ViewChild("formulario") public formulario: NgForm
+  @ViewChild("formulario") public f: NgForm
 
   constructor(private ordemCompraService: OrdemCompraService) { }
 
@@ -22,7 +22,16 @@ export class OrdemCompraComponent implements OnInit {
   
   
   public confirmarCompra():void{
-    console.log(this.formulario)
+    let pedido : Pedido  = new Pedido(
+      this.f.value.endereco,
+      this.f.value.numero,
+      this.f.value.complemento,
+      this.f.value.formaPagamento
+    )
+    this.ordemCompraService.efetivarCompra(pedido)
+      .subscribe((idPedido:number)=>{
+        console.log("Pedido cadastrado com sucesso! Id do Pedido" + idPedido)
+      })
   }
 
 }

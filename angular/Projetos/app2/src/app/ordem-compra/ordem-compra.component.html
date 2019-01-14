@@ -62,10 +62,7 @@
       </div>
       <br />
 
-      <pre>Valido - {{formulario.valid | json}}</pre>
-      <pre>InValido - {{formulario.invalid | json}}</pre>
-
-      <pre>{{formulario.value | json}}</pre> 
+       
       <h5>Dados de entrega</h5>
       <hr />
 
@@ -84,8 +81,10 @@
             ngModel
             #inputEndereco="ngModel"
           >
-          <small class="form-text text-success" *ngIf="inputEndereco.valid && inputEndereco.touched">Endereço Valido</small>
-          <small class="form-text text-danger" *ngIf="!inputEndereco.valid && inputEndereco.touched">Endereço inválido</small>
+          <small class="form-text text-success" 
+            *ngIf="inputEndereco.valid && inputEndereco.touched">Endereço Valido</small>
+          <small class="form-text text-danger" 
+            *ngIf="!inputEndereco.valid && inputEndereco.touched">Endereço inválido</small>
 
         </div>
 
@@ -102,8 +101,10 @@
             ngModel
             #inputNumero="ngModel"
           >
-          <small class="form-text text-success" *ngIf="inputNumero.valid && inputNumero.touched">Número Valido</small>
-          <small class="form-text text-danger" *ngIf="!inputNumero.valid && inputNumero.touched">Número Invalido</small>
+          <small class="form-text text-success" 
+            *ngIf="inputNumero.valid && inputNumero.touched">Número Valido</small>
+          <small class="form-text text-danger" 
+            *ngIf="!inputNumero.valid && inputNumero.touched">Número Invalido</small>
 
         </div>
 
@@ -132,12 +133,20 @@
             required
             name="formaPagamento"
             ngModel
+            #selectFormaPagamento="ngModel"
+
           >
             <option value="">Selecione uma opção</option>
             <option value="dinheiro">Dinheiro</option>
             <option value="debito">Débito</option>
           </select>
-          <small class="form-text text-danger">Forma de pagamento inválida</small>
+          <small class="form-text text-danger" 
+          *ngIf="!selectFormaPagamento.valid && selectFormaPagamento.touched"
+          >Forma de pagamento inválida 1</small>
+          
+          <small class="form-text text-success" 
+          *ngIf="selectFormaPagamento.valid && selectFormaPagamento.touched"
+          >Forma de pagamento válida</small>
         </div>
       </div>
 
