@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
 import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
 import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
-import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -39,9 +39,9 @@ import { FormsModule } from '@angular/forms'
     BrowserModule,
     HttpClientModule,
     CommonModule,
-    FormsModule,
-    RouterModule.forRoot(ROUTES)
-
+    // FormsModule,
+    RouterModule.forRoot(ROUTES),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

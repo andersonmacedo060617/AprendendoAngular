@@ -255,6 +255,27 @@
       "complemento": "apt 409 blc 2",
       "formaPagamento": "dinheiro",
       "id": 10
+    },
+    {
+      "endereco": "Rua a",
+      "numero": "323",
+      "complemento": "teste",
+      "formaPagamento": "dinheiro",
+      "id": 11
+    },
+    {
+      "endereco": "teste",
+      "numero": "te",
+      "complemento": "teet",
+      "formaPagamento": "dinheiro",
+      "id": 12
+    },
+    {
+      "endereco": "tetetasdwer",
+      "numero": "1231",
+      "complemento": "tetetewqe",
+      "formaPagamento": "debito",
+      "id": 13
     }
   ]
 }
