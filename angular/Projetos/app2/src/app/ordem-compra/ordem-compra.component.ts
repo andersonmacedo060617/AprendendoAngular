@@ -33,13 +33,13 @@ export class OrdemCompraComponent implements OnInit {
 
   ngOnInit() {
     this.itensCarrinho = this.carrinhoService.exibirItens()
-    console.log("Array itens", this.itensCarrinho)
+    //console.log("Array itens", this.itensCarrinho)
   }
 
   public confirmarCompra(): void {
     
     if(this.formulario.status === "INVALID"){
-      console.log("formulario está invalid")
+      //console.log("formulario está invalid")
 
       this.formulario.get('endereco').markAsTouched()
       this.formulario.get('numero').markAsTouched()
@@ -57,9 +57,13 @@ export class OrdemCompraComponent implements OnInit {
         this.ordemCompraService.efetivarCompra(pedido)
           .subscribe((idPedido:number)=>{
             this.idPedidoCompra = idPedido
-            console.log(this.idPedidoCompra)
+            //console.log(this.idPedidoCompra)
           })
         
     }
+  }
+
+  public adicionar(item:ItemCarrinho):void{
+    this.carrinhoService.adicionarQuantidade(item)
   }
 }
