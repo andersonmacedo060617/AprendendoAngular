@@ -35,6 +35,10 @@ export class OfertaComponent implements OnInit, OnDestroy  {
   ngOnDestroy(): void {
 
   }
+
+  public adicionarItemCarrinho(oferta : Oferta) : void{
+    console.log(oferta)
+  }
   
 
 }
