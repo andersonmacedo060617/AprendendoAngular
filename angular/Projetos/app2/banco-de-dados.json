@@ -276,6 +276,25 @@
       "complemento": "tetetewqe",
       "formaPagamento": "debito",
       "id": 13
+    },
+    {
+      "endereco": "teste",
+      "numero": "tee",
+      "complemento": "te",
+      "formaPagamento": "dinheiro",
+      "itens": [
+        {
+          "id": 4,
+          "img": {
+            "url": "/assets/ofertas/4/img1.jpg"
+          },
+          "title": "Estância das águas",
+          "descricao_oferta": "Diversão garantida com piscinas, trilhas e muito mais.",
+          "valor": 31.9,
+          "quantidade": 1
+        }
+      ],
+      "id": 14
     }
   ]
 }
