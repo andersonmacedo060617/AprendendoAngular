@@ -9,6 +9,10 @@ import { CadastroComponent } from './acesso/cadastro/cadastro.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {ReactiveFormsModule} from '@angular/forms'
 import { AutenticacaoService } from './autenticacao.service';
+import { HomeComponent } from './home/home.component';
+import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -16,15 +20,18 @@ import { AutenticacaoService } from './autenticacao.service';
     AcessoComponent,
     BannerComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    HomeComponent,
+    PublicacoesComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [AutenticacaoService],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
   
 })
 export class AppModule { }
