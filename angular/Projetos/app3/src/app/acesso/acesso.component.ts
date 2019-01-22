@@ -53,11 +53,11 @@ export class AcessoComponent implements OnInit {
   }
 
   public inicioDaAnimacao():void{
-    console.log("Inicio da Animação")
+    // console.log("Inicio da Animação")
   }
 
   public fimDaAnimacao():void{
-    console.log("Fim da Animação")
+    // console.log("Fim da Animação")
   }
 
 }
