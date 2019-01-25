@@ -48,6 +48,21 @@ export class AutenticacaoService{
         if(this.token_id === undefined && localStorage.getItem('idToken')!== null){
             this.token_id = localStorage.getItem('idToken')
         }
+
+        if(this.token_id === undefined){
+            this.router.navigate(['/'])
+        }
+
         return this.token_id !== undefined
+    }
+
+    public sair():void{
+        firebase.auth().signOut()
+            .then(()=>{
+                localStorage.removeItem("idToken")
+                this.token_id = undefined
+                this.router.navigate(['/home'])
+            })
+        
     }
 }

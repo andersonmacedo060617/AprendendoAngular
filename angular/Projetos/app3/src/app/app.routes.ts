@@ -6,5 +6,5 @@ import { AutenticacaoGuard } from './autenticacao-guard.service';
 
 export const ROUTES : Routes = [
     {path: '', component: AcessoComponent},
-    {path: 'home', component: HomeComponent, canActivate:[ AutenticacaoGuard ] }
+    {path: 'home', component: HomeComponent, canActivate:[ AutenticacaoGuard ]}
 ]
