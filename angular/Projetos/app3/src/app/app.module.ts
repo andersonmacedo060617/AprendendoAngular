@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { AutenticacaoGuard } from './autenticacao-guard.service';
 import { IncluirPublicacaoComponent } from './home/incluir-publicacao/incluir-publicacao.component';
+import { Bd } from './bd.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { IncluirPublicacaoComponent } from './home/incluir-publicacao/incluir-pu
   ],
   providers: [
     AutenticacaoService,
-    AutenticacaoGuard
+    AutenticacaoGuard,
+    Bd
   ],
   bootstrap: [AppComponent]
   
