@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Bd } from 'src/app/bd.service';
 import * as firebase from 'firebase'
+import { Progresso } from 'src/app/progresso.service';
+import { interval, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-incluir-publicacao',
@@ -10,6 +13,9 @@ import * as firebase from 'firebase'
 })
 export class IncluirPublicacaoComponent implements OnInit {
 
+  public progressoPublicacao: string = 'pendente'
+  public porcentagemUpload: number = 0
+
   public email: string
   private imagem:any
 
@@ -17,7 +23,7 @@ export class IncluirPublicacaoComponent implements OnInit {
     'titulo': new FormControl(null)
   })
 
-  constructor(private bdService: Bd) { }
+  constructor(private bdService: Bd, public progresso: Progresso) { }
 
   ngOnInit() {
     firebase.auth().onAuthStateChanged((user)=>{
@@ -30,6 +36,25 @@ export class IncluirPublicacaoComponent implements OnInit {
       titulo: this.formulario.value.titulo,
       email: this.email,
       imagem: this.imagem[0]
+    })
+
+    let acompanhementoUpload = interval(1500)
+    let continua = new Subject()
+    continua.next(true)
+
+    acompanhementoUpload
+    .pipe(takeUntil(continua))
+    .subscribe(()=>{
+      console.log(this.progresso.status)
+      console.log(this.progresso.estado)
+      this.progressoPublicacao =  'andamento'
+
+      this.porcentagemUpload = Math.round((this.progresso.estado.bytesTransferred / this.progresso.estado.totalBytes) * 100)
+
+      if(this.progresso.status === 'concluido'){
+        this.progressoPublicacao =  'concluido'
+        continua.next(false)
+      }     
     })
   }
 

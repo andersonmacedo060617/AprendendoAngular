@@ -16,6 +16,8 @@ import { ROUTES } from './app.routes';
 import { AutenticacaoGuard } from './autenticacao-guard.service';
 import { IncluirPublicacaoComponent } from './home/incluir-publicacao/incluir-publicacao.component';
 import { Bd } from './bd.service';
+import { Progresso } from './progresso.service';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { Bd } from './bd.service';
   providers: [
     AutenticacaoService,
     AutenticacaoGuard,
-    Bd
+    Bd,
+    Progresso
   ],
   bootstrap: [AppComponent]
   
