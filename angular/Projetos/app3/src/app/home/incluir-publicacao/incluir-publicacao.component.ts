@@ -19,6 +19,7 @@ export class IncluirPublicacaoComponent implements OnInit {
   public email: string
   private imagem:any
 
+  
   public formulario : FormGroup = new FormGroup({
     'titulo': new FormControl(null)
   })
