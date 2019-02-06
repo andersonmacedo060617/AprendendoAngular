@@ -48,31 +48,42 @@ export class Bd{
     public consultaPublicacoes(email:string):Promise<any>{
         return new Promise((resolve, reject)=>{
             firebase.database().ref(`publicacoes/${btoa(email)}`)
+            .orderByKey()
             .once('value')
             .then((snapshot)=>{
                 //console.log(snapshot.val())
                 let publicacoes : Array<any> = []
                 snapshot.forEach((childSnapshot: any)=>{
                     let publicacao = childSnapshot.val()
+                    publicacao.key = childSnapshot.key
 
+                    publicacoes.push(publicacao)
+
+                })
+                // resolve(publicacoes)
+                return publicacoes.reverse()
+            })
+            .then((publicacoes: any)=>{
+                publicacoes.forEach((publicacao)=>{
                     //consulta url da imagem
                     firebase.storage().ref()
-                        .child(`imagens/${childSnapshot.key}`)
-                        .getDownloadURL()
-                        .then((url:string)=>{
-                            //console.log(url)
-                            publicacao.url_imagem = url
+                    .child(`imagens/${publicacao.key}`)
+                    .getDownloadURL()
+                    .then((url:string)=>{
+                        //console.log(url)
+                        publicacao.url_imagem = url
 
-                            //consulta o nome do usuario
-                            firebase.database().ref(`usuario_detalhe/${btoa(email)}`)
-                                .once('value')
-                                .then((snapshot)=>{
-                                    publicacao.nome_usuario = snapshot.val().nome_usuario
-                                    publicacoes.push(publicacao)
-                                })
-                        })
+                        //consulta o nome do usuario
+                        firebase.database().ref(`usuario_detalhe/${btoa(email)}`)
+                            .once('value')
+                            .then((snapshot)=>{
+                                publicacao.nome_usuario = snapshot.val().nome_usuario
+                                
+                            })
+                    })  
+                    resolve(publicacoes)
                 })
-                resolve(publicacoes)
+                      
             })
         })
 
